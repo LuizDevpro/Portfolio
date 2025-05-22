@@ -3,12 +3,12 @@ const observer = new IntersectionObserver(
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show-section');
-            observer.unobserve(entry.target); // remove depois de mostrar
+            observer.unobserve(entry.target); 
           }
         });
       },
       {
-        threshold: 0.1 // quando 10% estiver visível
+        threshold: 0.3  
       }
     );
 
