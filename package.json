@@ -5,6 +5,6 @@
   },
 
   "scripts": {
-  "dev": "tailwindcss -i ./assets/src/input.css -o ./assets/css/main.css --watch"
+  "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch"
 }
 }
