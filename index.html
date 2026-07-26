@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="bg-slate-950 p-0 overflow-x-hidden">
+<body class="bg-slate-950 px-40 overflow-x-hidden">
 
     <!-- TopBar -->
     <header
@@ -44,7 +44,7 @@
 
     <!-- Seção: Hero -->
     <section id="inicio" class="w-full h-screen flex items-center overflow-hidden hidden-section">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between w-full px-6 md:px-30">
+        <div class="max-w-7xl flex flex-col sm:flex-row items-center justify-between w-full">
             <div class="text-white">
                 <h3 class="text-3xl">Olá, eu sou</h3>
                 <h1 class="text-6xl font-bold">Luiz Antonio</h1>
@@ -79,9 +79,10 @@
 
     <!-- Seção: Sobre -->
     <section id="sobre"
-        class="w-full h-auto flex flex-col gap-6 items-left overflow-hidden hidden-section px-40 pt-20 text-white">
+        class="w-full h-auto flex flex-col gap-6 items-center overflow-hidden hidden-section pt-20 text-white">
         <h1 class="text-4xl font-bold">Sobre Mim</h1>
-        <p class="text-2xl">Sou um estudante apaixonado por tecnologia e por entender como as coisas funcionam, busco me
+        <p class="text-2xl text-center">Sou um estudante apaixonado por tecnologia e por entender como as coisas
+            funcionam, busco me
             desenvolver como Desenvolvedor Full Stack. Tenho foco na WEB com PHP, especialmente com Laravel, além de
             experiência com JavaScript, HTML e Tailwind CSS. Gosto de criar aplicações organizadas, escaláveis e com
             interfaces responsivas que proporcionem uma boa experiência ao usuário.</p>
@@ -89,7 +90,7 @@
 
     <!-- Seção: Tecnologias -->
     <section id="tecnologias"
-        class="w-full h-screen flex flex-col gap-15 justify-center items-center overflow-hidden hidden-section px-40 py-0">
+        class="w-full h-screen flex flex-col gap-15 justify-center items-center overflow-hidden hidden-section py-0">
         <h1 class="text-white text-4xl font-bold">Tecnologias</h1>
         <article class="flex justify-center gap-6 w-full items-center flex-wrap">
             <div
@@ -182,41 +183,84 @@
 
     <!-- Seção: Projetos -->
     <section id="projetos"
-        class="w-full h-screen flex flex-col gap-10 justify-center items-center overflow-hidden hidden-section px-40">
+        class="w-full h-screen flex flex-col gap-10 justify-center items-center overflow-hidden hidden-section">
         <h1 class="text-white text-4xl font-bold">Projetos</h1>
         <article class="flex justify-center gap-6 w-full items-center flex-wrap">
             <div class="w-80 h-120 border border-white rounded-xl flex flex-col justify-start items-start object-cover">
-                <img src="/assets/img/projects_previews/brilhaauto_preview.png" alt="brilhaauto_preview"
+                <img src="assets/img/projects_previews/brilhaauto_preview.png" alt="brilhaauto_preview"
                     class="w-full h-45 object-cover rounded-t-xl">
 
                 <h1 class="text-white font-semibold text-xl mx-4 mt-2">BrilhaAuto</h1>
 
-                <p class="text-white font-normal text-lg mx-4 mt-2">Sistema web para agendamento e gerenciamento de serviços para estética automotiva.</p>
-                
+                <p class="text-white font-normal text-lg mx-4 mt-2">Sistema web para agendamento e gerenciamento de
+                    serviços para estética automotiva.</p>
+
                 <div class="text-lg text-white/50 mx-4 mt-2 w-full flex flex-wrap gap-2">
                     <p class="py-1 px-3 border border-white/50 rounded-4xl">Laravel</p>
                     <p class="py-1 px-3 border border-white/50 rounded-4xl">Tailwind</p>
                     <p class="py-1 px-3 border border-white/50 rounded-4xl">JavaScript</p>
                     <p class="py-1 px-3 border border-white/50 rounded-4xl">MySQL</p>
                 </div>
-                
+
                 <div class="text-lg text-white mx-4 mt-4 w-[calc(100%-2rem)] flex justify-between flex-wrap gap-2">
-                    <a href="https://github.com/LuizDevpro/BrilhaAuto" class="flex items-center gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4"> <i class="fa-brands fa-github"></i>GitHub</a>
-                    <a href="" class="flex items-center gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4">Ver Projeto<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg></a>
+                    <a href="https://github.com/LuizDevpro/BrilhaAuto"
+                        class="flex items-center gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4">
+                        <i class="fa-brands fa-github"></i>GitHub</a>
+                    <a href=""
+                        class="flex items-center gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4">Ver
+                        Projeto<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right">
+                            <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                            <path d="m21 3-9 9" />
+                            <path d="M15 3h6v6" />
+                        </svg></a>
                 </div>
             </div>
         </article>
     </section>
 
     <!-- Seção 5: Contato -->
-    <section id="contato" class="w-full h-screen flex items-center overflow-hidden hidden-section">
+    <section id="contato"
+        class="w-full h-screen flex flex-col gap-18 justify-center items-center overflow-hidden hidden-section">
+        <div class="w-full flex flex-col gap-10 justify-center items-center overflow-hidden hidden-section">
+            <h1 class="text-white text-4xl font-bold">Contato</h1>
+            <h2 class="text-3xl font-semibold text-white text-center">Tem alguma ideia, oportunidade ou projeto em
+                mente?
+                Ficarei feliz em conversar com você.</h2>
+        </div>
 
+        <article class="flex justify-center gap-10 w-full items-center flex-wrap">
+
+            <a href="https://github.com/LuizDevpro" class="h-auto flex flex-col gap-2 text-white justify-center items-center" target="_blank" rel="noopener noreferrer">
+                <div class="w-20 aspect-square flex items-center justify-center py-2 px-3 rounded-full bg-slate-900"><i
+                        class="fa-brands fa-github text-5xl"></i></div>
+                <h3 class="text-2xl font-semibold">GitHub</h3>
+                <p class="font-extralight text-white/50">/LuizDevpro</p>
+            </a>
+            <a href="https://www.linkedin.com/in/luizdevpro/" class="h-auto flex flex-col gap-2 text-white justify-center items-center" target="_blank" rel="noopener noreferrer">
+                <div class="w-20 aspect-square flex items-center justify-center py-2 px-3 rounded-full bg-slate-900"><i class="fa-brands fa-linkedin-in text-5xl"></i></div>
+                <h3 class="text-2xl font-semibold">LinkedIn</h3>
+                <p class="font-extralight text-white/50">/luizdevpro</p>
+            </a>
+            <a href="https://www.instagram.com/luiz_devpro/" class="h-auto flex flex-col gap-2 text-white justify-center items-center" target="_blank" rel="noopener noreferrer">
+                <div class="w-20 aspect-square flex items-center justify-center py-2 px-3 rounded-full bg-slate-900"><i
+                        class="fa-brands fa-instagram text-5xl"></i></div>
+                <h3 class="text-2xl font-semibold">Instagram</h3>
+                <p class="font-extralight text-white/50">@luiz_devpro</p>
+            </a>
+            <a href="mailto:luizdev.pro@gmail.com" class="h-auto flex flex-col gap-2 text-white justify-center items-center">
+                <div class="w-20 aspect-square flex items-center justify-center py-2 px-3 rounded-full bg-slate-900"><i
+                        class="fa-regular fa-envelope text-5xl"></i></div>
+                <h3 class="text-2xl font-semibold">E-mail</h3>
+                <p class="font-extralight text-white/50">luizdev.pro@gmail.com</p>
+            </a>
+
+
+        </article>
     </section>
 
-    <!-- Footer -->
-    <footer class="w-full h-screen flex items-center overflow-hidden hidden-section">
-
-    </footer>
 
     <script src="assets/js/script.js"></script>
 
