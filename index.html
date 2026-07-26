@@ -18,19 +18,18 @@
 
 </head>
 
-<body class="bg-slate-950 px-40 pt-20 overflow-x-hidden">
+<body class="bg-slate-950 overflow-x-hidden pt-20 px-5 sm:px-8 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
 
     <!-- TopBar -->
     <header
-        class="flex fixed top-0 left-0 w-full z-50 bg-zinc-950/90 h-20 justify-between items-center px-6 border-b border-white/90">
-        <div>
-            <a href="#inicio" class="text-white text-3xl flex items-center gap-3">
-                <i class="fa-solid fa-code"></i>
-                <p>Luiz Dev</p>
-            </a>
+        class="fixed top-0 left-0 z-50 flex h-20 w-full items-center justify-between border-b border-white/90 bg-zinc-950/90 px-5">
 
-        </div>
-        <nav class="text-white text-xl flex gap-6">
+        <a href="#inicio" class="flex items-center gap-3 text-2xl text-white sm:text-3xl">
+            <i class="fa-solid fa-code"></i>
+            <p>Luiz Dev</p>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-6 text-lg xl:text-xl text-white">
             <a href="#inicio">Início</a>
             <a href="#sobre">Sobre</a>
             <a href="#tecnologias">Tecnologias</a>
@@ -38,121 +37,176 @@
             <a href="#contato">Contato</a>
         </nav>
 
-
+        <button id="menu-btn" class="lg:hidden text-white text-3xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </header>
+
+    <div id="menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+    <nav id="mobile-menu"
+        class="fixed top-0 right-[-100%] z-50 h-screen w-72 bg-slate-900 border-l border-white/20 transition-all duration-300 lg:hidden">
+
+        <div class="flex justify-between items-center p-6 border-b border-white/20">
+            <h2 class="text-white text-xl font-semibold">Menu</h2>
+
+            <button id="close-menu" class="text-white text-3xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col text-white text-xl">
+
+            <a class="px-6 py-5 hover:bg-slate-800 transition-colors" href="#inicio">Início</a>
+
+            <a class="px-6 py-5 hover:bg-slate-800 transition-colors" href="#sobre">Sobre</a>
+
+            <a class="px-6 py-5 hover:bg-slate-800 transition-colors" href="#tecnologias">Tecnologias</a>
+
+            <a class="px-6 py-5 hover:bg-slate-800 transition-colors" href="#projetos">Projetos</a>
+
+            <a class="px-6 py-5 hover:bg-slate-800 transition-colors" href="#contato">Contato</a>
+
+        </div>
+
+    </nav>
 
 
     <!-- Seção: Hero -->
-    <section id="inicio" class="w-full h-screen flex items-center overflow-hidden hidden-section">
-        <div class="max-w-7xl flex flex-col sm:flex-row items-center justify-between w-full">
-            <div class="text-white">
-                <h3 class="text-3xl">Olá, eu sou</h3>
-                <h1 class="text-6xl font-bold">Luiz Antonio</h1>
-                <h2 class="text-4xl font-semibold">Desenvolvedor Full Stack</h2>
+    <section id="inicio" class="flex min-h-screen w-full items-center overflow-hidden hidden-section py-12">
+        <div class="flex w-full max-w-7xl flex-col-reverse items-center justify-between gap-12 lg:flex-row">
 
-                <div class="flex my-6 gap-5">
+            <div class="text-center text-white lg:text-left">
+                <h3 class="text-2xl sm:text-3xl">Olá, eu sou</h3>
+
+                <h1 class="mt-2 text-4xl font-bold sm:text-5xl lg:text-6xl">
+                    Luiz Antonio
+                </h1>
+
+                <h2 class="mt-2 text-2xl font-semibold sm:text-3xl lg:text-4xl">
+                    Desenvolvedor Full Stack
+                </h2>
+
+                <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
                     <a href="#projetos"
-                        class="flex items-center gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4" target="_blank" rel="noopener noreferrer"><i
-                            class="fa-regular fa-folder-open"></i>Ver Projetos</a>
+                        class="flex items-center justify-center gap-2 rounded-xl border border-white bg-slate-800 px-5 py-3 text-lg text-white">
+                        <i class="fa-regular fa-folder-open"></i>
+                        Ver Projetos
+                    </a>
+
                     <a href="#contato"
-                        class="flex items-center gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4"><i
-                            class="fa-regular fa-envelope"></i>Contato</a>
+                        class="flex items-center justify-center gap-2 rounded-xl border border-white bg-slate-800 px-5 py-3 text-lg text-white">
+                        <i class="fa-regular fa-envelope"></i>
+                        Contato
+                    </a>
+
                     <a href="assets/documents/curriculo.pdf" download="Curriculo_LuizDev.pdf"
-                        class="flex gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        class="flex items-center justify-center gap-2 rounded-xl border border-white bg-slate-800 px-5 py-3 text-lg text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-download-icon lucide-download">
                             <path d="M12 15V3" />
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                             <path d="m7 10 5 5 5-5" />
-                        </svg>Baixar CV</a>
+                        </svg>
+                        Baixar CV
+                    </a>
                 </div>
-
             </div>
 
-            <div>
-                <img class="w-full max-w-sm aspect-square rounded-full opacity-90" src="assets/img/LuizAntonio.jpg"
-                    alt="LuizAntonio" />
+            <div class="flex justify-center">
+                <img class="aspect-square w-56 rounded-full opacity-90 sm:w-72 lg:w-96" src="assets/img/LuizAntonio.jpg"
+                    alt="LuizAntonio">
             </div>
+
         </div>
     </section>
 
     <!-- Seção: Sobre -->
-    <section id="sobre"
-        class="w-full h-auto flex flex-col gap-6 items-center overflow-hidden hidden-section pt-20 text-white">
-        <h1 class="text-4xl font-bold">Sobre Mim</h1>
-        <p class="text-2xl text-center">Sou um estudante apaixonado por tecnologia e por entender como as coisas
-            funcionam, busco me
-            desenvolver como Desenvolvedor Full Stack. Tenho foco na WEB com PHP, especialmente com Laravel, além de
-            experiência com JavaScript, HTML e Tailwind CSS. Gosto de criar aplicações organizadas, escaláveis e com
-            interfaces responsivas que proporcionem uma boa experiência ao usuário.</p>
+    <section id="sobre" class="flex w-full flex-col items-center gap-6 overflow-hidden hidden-section py-20 text-white">
+
+        <h1 class="text-3xl font-bold sm:text-4xl">
+            Sobre Mim
+        </h1>
+
+        <p class="max-w-5xl text-center text-lg leading-relaxed sm:text-xl lg:text-2xl">
+            Sou um estudante apaixonado por tecnologia e por entender como as coisas
+            funcionam, busco me desenvolver como Desenvolvedor Full Stack. Tenho foco
+            na WEB com PHP, especialmente com Laravel, além de experiência com
+            JavaScript, HTML e Tailwind CSS. Gosto de criar aplicações organizadas,
+            escaláveis e com interfaces responsivas que proporcionem uma boa
+            experiência ao usuário.
+        </p>
+
     </section>
 
     <!-- Seção: Tecnologias -->
     <section id="tecnologias"
-        class="w-full h-screen flex flex-col gap-15 justify-center items-center overflow-hidden hidden-section py-0">
-        <h1 class="text-white text-4xl font-bold">Tecnologias</h1>
-        <article class="flex justify-center gap-6 w-full items-center flex-wrap">
+        class="flex w-full flex-col items-center justify-center gap-10 overflow-hidden hidden-section py-20">
+
+        <h1 class="text-3xl font-bold text-white sm:text-4xl">Tecnologias</h1>
+
+        <article class="flex w-full flex-wrap justify-center gap-4 sm:gap-5 lg:gap-6 text-4xl sm:text-5xl">
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col gap-2 items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-laravel"></i>
-                <p class="text-xl!">Laravel</p>
+                <p class="text-sm sm:text-base lg:text-xl">Laravel</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-php"></i>
-                <p class="text-xl!">PHP</p>
+                <p class="text-sm sm:text-base lg:text-xl">PHP</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-js"></i>
-                <p class="text-xl!">JavaScript</p>
+                <p class="text-sm sm:text-base lg:text-xl">JavaScript</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
-                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
+                <svg class="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                     <path fill="#ffffff"
                         d="M116.948 97.807c-6.863-.187-12.104.452-16.585 2.341-1.273.537-3.305.552-3.513 2.147.7.733.809 1.829 1.365 2.731 1.07 1.73 2.876 4.052 4.488 5.268 1.762 1.33 3.577 2.751 5.465 3.902 3.358 2.047 7.107 3.217 10.34 5.268 1.906 1.21 3.799 2.733 5.658 4.097.92.675 1.537 1.724 2.732 2.147v-.194c-.628-.8-.79-1.898-1.366-2.733l-2.537-2.537c-2.48-3.292-5.629-6.184-8.976-8.585-2.669-1.916-8.642-4.504-9.755-7.609l-.195-.195c1.892-.214 4.107-.898 5.854-1.367 2.934-.786 5.556-.583 8.585-1.365l4.097-1.171v-.78c-1.531-1.571-2.623-3.651-4.292-5.073-4.37-3.72-9.138-7.437-14.048-10.537-2.724-1.718-6.089-2.835-8.976-4.292-.971-.491-2.677-.746-3.318-1.562-1.517-1.932-2.342-4.382-3.511-6.633-2.449-4.717-4.854-9.868-7.024-14.831-1.48-3.384-2.447-6.72-4.293-9.756-8.86-14.567-18.396-23.358-33.169-32-3.144-1.838-6.929-2.563-10.929-3.513-2.145-.129-4.292-.26-6.438-.391-1.311-.546-2.673-2.149-3.902-2.927C17.811 4.565 5.257-2.16 1.633 6.682c-2.289 5.581 3.421 11.025 5.462 13.854 1.434 1.982 3.269 4.207 4.293 6.438.674 1.467.79 2.938 1.367 4.489 1.417 3.822 2.652 7.98 4.487 11.511.927 1.788 1.949 3.67 3.122 5.268.718.981 1.951 1.413 2.145 2.927-1.204 1.686-1.273 4.304-1.95 6.44-3.05 9.615-1.899 21.567 2.537 28.683 1.36 2.186 4.567 6.871 8.975 5.073 3.856-1.57 2.995-6.438 4.098-10.732.249-.973.096-1.689.585-2.341v.195l3.513 7.024c2.6 4.187 7.212 8.562 11.122 11.514 2.027 1.531 3.623 4.177 6.244 5.073v-.196h-.195c-.508-.791-1.303-1.119-1.951-1.755-1.527-1.497-3.225-3.358-4.487-5.073-3.556-4.827-6.698-10.11-9.561-15.609-1.368-2.627-2.557-5.523-3.709-8.196-.444-1.03-.438-2.589-1.364-3.122-1.263 1.958-3.122 3.542-4.098 5.854-1.561 3.696-1.762 8.204-2.341 12.878-.342.122-.19.038-.391.194-2.718-.655-3.672-3.452-4.683-5.853-2.554-6.07-3.029-15.842-.781-22.829.582-1.809 3.21-7.501 2.146-9.172-.508-1.666-2.184-2.63-3.121-3.903-1.161-1.574-2.319-3.646-3.124-5.464-2.09-4.731-3.066-10.044-5.267-14.828-1.053-2.287-2.832-4.602-4.293-6.634-1.617-2.253-3.429-3.912-4.683-6.635-.446-.968-1.051-2.518-.391-3.513.21-.671.508-.951 1.171-1.17 1.132-.873 4.284.29 5.462.779 3.129 1.3 5.741 2.538 8.392 4.294 1.271.844 2.559 2.475 4.097 2.927h1.756c2.747.631 5.824.195 8.391.975 4.536 1.378 8.601 3.523 12.292 5.854 11.246 7.102 20.442 17.21 26.732 29.269 1.012 1.942 1.45 3.794 2.341 5.854 1.798 4.153 4.063 8.426 5.852 12.488 1.786 4.052 3.526 8.141 6.05 11.513 1.327 1.772 6.451 2.723 8.781 3.708 1.632.689 4.307 1.409 5.854 2.34 2.953 1.782 5.815 3.903 8.586 5.855 1.383.975 5.64 3.116 5.852 4.879zM29.729 23.466c-1.431-.027-2.443.156-3.513.389v.195h.195c.683 1.402 1.888 2.306 2.731 3.513.65 1.367 1.301 2.732 1.952 4.097l.194-.193c1.209-.853 1.762-2.214 1.755-4.294-.484-.509-.555-1.147-.975-1.755-.556-.811-1.635-1.272-2.339-1.952z" />
                 </svg>
-                <p class="text-xl!">MySQL</p>
+                <p class="text-sm sm:text-base lg:text-xl">MySQL</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
-                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
+                <svg class="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                     <path
                         d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
                         fill="#ffffff" />
                 </svg>
-                <p class="text-xl!">Tailwind</p>
+                <p class="text-sm sm:text-base lg:text-xl">Tailwind</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-html5"></i>
-                <p class="text-xl!">HTML</p>
+                <p class="text-sm sm:text-base lg:text-xl">HTML</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-css3-alt"></i>
-                <p class="text-xl!">CSS</p>
+                <p class="text-sm sm:text-base lg:text-xl">CSS</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-git-alt"></i>
-                <p class="text-xl!">Git</p>
+                <p class="text-sm sm:text-base lg:text-xl">Git</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-github"></i>
-                <p class="text-xl!">GitHub</p>
+                <p class="text-sm sm:text-base lg:text-xl">GitHub</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-figma"></i>
-                <p class="text-xl!">Figma</p>
+                <p class="text-sm sm:text-base lg:text-xl">Figma</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
-                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
+                <svg class="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                     <g fill="#ffffff">
                         <path
                             d="M59.39.152c-.484.051-1.995.23-3.328.387-5.374.613-11.468 2.227-16.816 4.48C19.891 13.106 5.324 30.849 1.305 51.2.359 56.04.129 58.418.129 64c0 7.195.715 12.16 2.61 18.434 6.195 20.53 22.323 36.632 42.906 42.851 6.195 1.871 11.187 2.586 18.355 2.586 7.195 0 12.16-.715 18.434-2.61 20.53-6.195 36.632-22.323 42.851-42.906 1.871-6.195 2.586-11.187 2.586-18.355 0-3.047-.152-6.527-.332-7.809-2.074-14.796-8.168-27.238-18.328-37.402C99.07 8.703 86.68 2.586 72.19.512c-1.996-.282-11.238-.54-12.8-.36zm-20.863 40.32c1.36.41 1.996.794 2.918 1.715 1.793 1.82 2.203 2.817 2.203 5.555 0 2.051-.078 2.434-.691 3.508-1.18 1.996-3.918 3.84-5.812 3.89-1.333.028-1.278-.562.18-2.097 1.945-2.023 2.226-2.79 2.226-5.813-.024-2.917-.383-3.914-1.739-4.734-1.128-.691-2.355-.64-4.148.203-4.66 2.23-9.703 9.653-11.672 17.258-2.613 10.137 2.02 18.25 9.649 16.867 2.226-.41 6.425-2.558 8.246-4.25 1.508-1.379 1.508-1.406 1.66-3.12.336-3.587 2.867-7.169 6.25-8.833 1.558-.77 1.945-.844 4.043-.844 1.996 0 2.457.102 3.43.637 3.097 1.77 2.457 5.89-.895 5.89-1.945 0-2.945-1-1.535-1.534 1.383-.512.867-2.434-.742-2.868-1.895-.488-4.047.793-5.403 3.25-1.64 2.97-1.715 6.504-.156 8.114 1.512 1.613 3.406.336 4.867-3.329.766-1.867 1.867-2.867 3.149-2.867 1.125 0 1.332.692.843 2.793-.718 3.25-.23 4.094 1.793 3.098.664-.309 1.766-1.023 2.43-1.535l1.254-1 .848-4.43c.922-4.965 1.277-5.633 3.172-5.988 1.82-.336 2.23.562 1.562 3.402l-.36 1.59 1.333-1.36c3.148-3.226 7.015-4.812 8.347-3.48.715.715.637 1.613-.386 4.785-.485 1.512-1.153 3.895-1.457 5.25-.461 2.047-.489 2.535-.23 2.868.82.972 3.327-.028 5.554-2.204l1.305-1.277.156-2.844c.152-3.277.457-4.453 1.328-5.504.82-.972 2.305-1.687 3.098-1.484.793.207.793.973.078 3.227-1 3.097-.895 10.238.129 10.238.41 0 2.507-2.2 3.84-4.043l.996-1.36-.793-.816c-1.383-1.46-1.715-2.406-1.715-4.789 0-1.738.129-2.379.562-3.227.719-1.328 1.844-2.3 3.176-2.687 1.406-.434 3.148.281 3.863 1.562.719 1.305.54 4.223-.383 6.223l-.664 1.457h.895c1.23 0 1.715-.305 3.918-2.379 1.152-1.101 2.484-2.05 3.48-2.511 3.918-1.84 8.528-.895 9.293 1.921.64 2.254-.765 3.84-3.226 3.66-1.766-.128-2.098-.59-1.074-1.456 1.843-1.54 0-3.508-2.637-2.793-1.434.386-3.047 1.996-3.89 3.867-1.692 3.738-.794 8.14 1.636 8.14.973 0 2.691-1.921 3.355-3.789.793-2.152 2.457-3.507 3.711-3.02.692.255.743.946.309 3.122-.488 2.383-.563 4.61-.18 5.633.153.382.614 1.101 1.051 1.586.816.921.844 1.254.152 1.691-.332.23-.77.129-1.843-.46-1.485-.77-2.766-2.153-3.227-3.458l-.281-.766-1.024.766c-.59.41-1.511.871-2.047 1.023-2.125.563-4.738-.894-5.964-3.351-.489-.95-.641-3.738-.282-4.813.204-.59.204-.59-.617-.18-.433.231-1.355.485-2.07.563-1.18.13-1.36.258-2.535 1.742-1.664 2.07-4.61 4.864-5.813 5.454-2.558 1.277-3.402.918-4.07-1.72l-.461-1.765-1.102.973c-1.406 1.23-4.222 2.715-5.836 3.074-1.535.332-3.175-.156-3.84-1.18-.995-1.535-.663-4.785.922-9.164 1.176-3.25.333-3.3-2.636-.203-2.203 2.328-3.149 3.992-3.762 6.578-.64 2.688-1.41 3.66-3.148 4.07-1.051.231-1.54-.41-1.332-1.816l.152-1.129-.973.668c-1.383.946-3.125 1.817-4.328 2.149-1.203.332-2.789-.024-3.172-.692-.691-1.175-.691-1.175-1.765-.332-2.332 1.895-5.66 1.356-7.348-1.152l-.54-.793-1.687 1.562c-4.867 4.454-10.957 6.45-15.464 5.067-5.735-1.738-8.907-6.656-8.856-13.746.024-7.117 3.172-14.617 8.473-20.172 2.996-3.125 5.812-4.969 8.68-5.66 2.07-.512 3.328-.485 5.296.129zm0 0" />
@@ -160,20 +214,20 @@
                             d="M90.418 58.676c-.563.562-.356 2.816.36 4.25.359.742.742 1.332.87 1.332.102 0 .332-.59.512-1.309.64-2.66-.512-5.504-1.742-4.273zm0 0" />
                     </g>
                 </svg>
-                <p class="text-xl!">Canva</p>
+                <p class="text-sm sm:text-base lg:text-xl">Canva</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
                 <i class="fa-brands fa-bootstrap"></i>
-                <p class="text-xl!">Bootstrap</p>
+                <p class="text-sm sm:text-base lg:text-xl">Bootstrap</p>
             </div>
             <div
-                class="text-white text-5xl border border-white/15 rounded-lg p-3 flex flex-col items-center justify-center bg-slate-900 w-30 aspect-square">
-                <svg class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                class="flex aspect-square w-24 flex-col items-center justify-center gap-2 rounded-lg border border-white/15 bg-slate-900 p-3 text-white sm:w-28 lg:w-30">
+                <svg class="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                     <path fill="#ffffff"
                         d="M89.708 48.868l-.758-.414c.399.964.529 1.786.515 2.521a8.627 8.627 0 00.248-1.847 8.22 8.22 0 01-.273 2.231l.025-.385a8.52 8.52 0 01-1.074 2.558l.235-.25c-2.88 4.819-10.737 5.872-14.612.895-6.22-7.99.128-16.604 1.017-25.065 1.111-10.604-5.538-20.899-13.783-27.06 4.541 7.346-1.442 17.066-6.229 22.498-4.642 5.269-10.286 9.667-15.41 14.451-5.503 5.143-10.797 10.555-15.319 16.588-9.049 12.074-14.59 27.26-10.518 42.325 4.068 15.056 17.108 24.639 31.834 28.027-7.429-3.212-14.381-11.373-14.397-19.723-.019-9.106 5.75-16.835 12.927-21.914-.863 3.259-1.334 6.24.803 9.155 1.988 2.711 5.468 4.027 8.753 3.312 7.679-1.679 8.03-10.12 3.479-15.038-4.501-4.868-8.855-10.371-7.143-17.433.858-3.54 3.032-6.854 5.787-9.226-2.118 5.563 3.897 11.049 7.859 13.779 6.876 4.741 14.416 8.325 20.738 13.881 6.648 5.84 11.559 13.736 10.567 22.896-1.076 9.927-8.964 16.832-17.811 20.317 18.696-4.128 38.018-18.639 38.411-39.376.329-17.058-11.373-30.187-25.871-37.703z" />
                 </svg>
-                <p class="text-xl!">CodeIgniter</p>
+                <p class="text-sm sm:text-base lg:text-xl">CodeIgniter</p>
             </div>
 
 
@@ -183,83 +237,153 @@
 
     <!-- Seção: Projetos -->
     <section id="projetos"
-        class="w-full h-screen flex flex-col gap-10 justify-center items-center overflow-hidden hidden-section">
-        <h1 class="text-white text-4xl font-bold">Projetos</h1>
-        <article class="flex justify-center gap-6 w-full items-center flex-wrap">
-            <div class="w-80 h-120 border border-white rounded-xl flex flex-col justify-start items-start object-cover">
-                <img src="assets/img/projects_previews/brilhaauto_preview.png" alt="brilhaauto_preview"
-                    class="w-full h-45 object-cover rounded-t-xl">
+    class="flex w-full flex-col items-center justify-center gap-10 overflow-hidden hidden-section py-20">
 
-                <h1 class="text-white font-semibold text-xl mx-4 mt-2">BrilhaAuto</h1>
+    <h1 class="text-3xl font-bold text-white sm:text-4xl">Projetos</h1>
 
-                <p class="text-white font-normal text-lg mx-4 mt-2">Sistema web para agendamento e gerenciamento de
-                    serviços para estética automotiva.</p>
+    <article class="flex w-full flex-wrap justify-center gap-6">
 
-                <div class="text-lg text-white/50 mx-4 mt-2 w-full flex flex-wrap gap-2">
-                    <p class="py-1 px-3 border border-white/50 rounded-4xl">Laravel</p>
-                    <p class="py-1 px-3 border border-white/50 rounded-4xl">Tailwind</p>
-                    <p class="py-1 px-3 border border-white/50 rounded-4xl">JavaScript</p>
-                    <p class="py-1 px-3 border border-white/50 rounded-4xl">MySQL</p>
-                </div>
+        <div
+            class="flex w-full max-w-sm flex-col items-start rounded-xl border border-white object-cover sm:w-80">
 
-                <div class="text-lg text-white mx-4 mt-4 w-[calc(100%-2rem)] flex justify-between flex-wrap gap-2">
-                    <a href="https://github.com/LuizDevpro/BrilhaAuto"
-                        class="flex items-center gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4">
-                        <i class="fa-brands fa-github"></i>GitHub</a>
-                    <a href=""
-                        class="flex items-center gap-2 text-lg bg-slate-800 text-white border border-white rounded-xl py-2 px-4">Ver
-                        Projeto<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right">
-                            <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
-                            <path d="m21 3-9 9" />
-                            <path d="M15 3h6v6" />
-                        </svg></a>
-                </div>
+            <img src="assets/img/projects_previews/brilhaauto_preview.png" alt="brilhaauto_preview"
+                class="h-48 w-full rounded-t-xl object-cover">
+
+            <h2 class="mx-4 mt-4 text-xl font-semibold text-white">
+                BrilhaAuto
+            </h2>
+
+            <p class="mx-4 mt-2 text-base text-white sm:text-lg">
+                Sistema web para agendamento e gerenciamento de serviços para estética automotiva.
+            </p>
+
+            <div class="mx-4 mt-4 flex w-[calc(100%-2rem)] flex-wrap gap-2 text-white/50">
+                <p class="rounded-full border border-white/50 px-3 py-1 text-sm sm:text-base">Laravel</p>
+                <p class="rounded-full border border-white/50 px-3 py-1 text-sm sm:text-base">Tailwind</p>
+                <p class="rounded-full border border-white/50 px-3 py-1 text-sm sm:text-base">JavaScript</p>
+                <p class="rounded-full border border-white/50 px-3 py-1 text-sm sm:text-base">MySQL</p>
             </div>
-        </article>
-    </section>
+
+            <div
+                class="mx-4 mt-6 mb-4 flex w-[calc(100%-2rem)] flex-col gap-3 sm:flex-row sm:justify-between">
+
+                <a href="https://github.com/LuizDevpro/BrilhaAuto"
+                    class="flex items-center justify-center gap-2 rounded-xl border border-white bg-slate-800 px-4 py-2 text-base text-white sm:text-lg">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
+                </a>
+
+                <a href=""
+                    class="flex items-center justify-center gap-2 rounded-xl border border-white bg-slate-800 px-4 py-2 text-base text-white sm:text-lg">
+                    Ver Projeto
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right">
+                        <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                        <path d="m21 3-9 9" />
+                        <path d="M15 3h6v6" />
+                    </svg>
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+</section>
 
     <!-- Seção 5: Contato -->
     <section id="contato"
-        class="w-full h-screen flex flex-col gap-18 justify-center items-center overflow-hidden hidden-section">
-        <div class="w-full flex flex-col gap-10 justify-center items-center">
-            <h1 class="text-white text-4xl font-bold">Contato</h1>
-            <h2 class="text-3xl font-semibold text-white text-center">Tem alguma ideia, oportunidade ou projeto em
-                mente?
-                Ficarei feliz em conversar com você.</h2>
-        </div>
+    class="flex w-full flex-col items-center justify-center gap-12 overflow-hidden hidden-section py-20">
 
-        <article class="flex justify-center gap-10 w-full items-center flex-wrap">
+    <div class="flex w-full flex-col items-center justify-center gap-6">
+        <h1 class="text-3xl font-bold text-white sm:text-4xl">
+            Contato
+        </h1>
 
-            <a href="https://github.com/LuizDevpro" class="h-auto flex flex-col gap-2 text-white justify-center items-center" target="_blank" rel="noopener noreferrer">
-                <div class="w-20 aspect-square flex items-center justify-center py-2 px-3 rounded-full bg-slate-900"><i
-                        class="fa-brands fa-github text-5xl"></i></div>
-                <h3 class="text-2xl font-semibold">GitHub</h3>
-                <p class="font-extralight text-white/50">/LuizDevpro</p>
-            </a>
-            <a href="https://www.linkedin.com/in/luizdevpro/" class="h-auto flex flex-col gap-2 text-white justify-center items-center" target="_blank" rel="noopener noreferrer">
-                <div class="w-20 aspect-square flex items-center justify-center py-2 px-3 rounded-full bg-slate-900"><i class="fa-brands fa-linkedin-in text-5xl"></i></div>
-                <h3 class="text-2xl font-semibold">LinkedIn</h3>
-                <p class="font-extralight text-white/50">/luizdevpro</p>
-            </a>
-            <a href="https://www.instagram.com/luiz_devpro/" class="h-auto flex flex-col gap-2 text-white justify-center items-center" target="_blank" rel="noopener noreferrer">
-                <div class="w-20 aspect-square flex items-center justify-center py-2 px-3 rounded-full bg-slate-900"><i
-                        class="fa-brands fa-instagram text-5xl"></i></div>
-                <h3 class="text-2xl font-semibold">Instagram</h3>
-                <p class="font-extralight text-white/50">@luiz_devpro</p>
-            </a>
-            <a href="mailto:luizdev.pro@gmail.com" class="h-auto flex flex-col gap-2 text-white justify-center items-center">
-                <div class="w-20 aspect-square flex items-center justify-center py-2 px-3 rounded-full bg-slate-900"><i
-                        class="fa-regular fa-envelope text-5xl"></i></div>
-                <h3 class="text-2xl font-semibold">E-mail</h3>
-                <p class="font-extralight text-white/50">luizdev.pro@gmail.com</p>
-            </a>
+        <h2 class="max-w-4xl text-center text-xl font-semibold text-white sm:text-2xl lg:text-3xl">
+            Tem alguma ideia, oportunidade ou projeto em mente?
+            Ficarei feliz em conversar com você.
+        </h2>
+    </div>
 
+    <article class="flex w-full flex-wrap justify-center gap-12 sm:gap-14">
 
-        </article>
-    </section>
+        <a href="https://github.com/LuizDevpro"
+            class="w-40 flex flex-col gap-2 text-white justify-center items-center text-center"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="flex aspect-square w-16 items-center justify-center rounded-full bg-slate-900 sm:w-20">
+                <i class="fa-brands fa-github text-4xl sm:text-5xl"></i>
+            </div>
+
+            <h3 class="text-xl font-semibold sm:text-2xl">
+                GitHub
+            </h3>
+
+            <p class="text-center text-sm font-extralight text-white/50 sm:text-base">
+                /LuizDevpro
+            </p>
+
+        </a>
+
+        <a href="https://www.linkedin.com/in/luizdevpro/"
+            class="w-40 flex flex-col gap-2 text-white justify-center items-center text-center"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="flex aspect-square w-16 items-center justify-center rounded-full bg-slate-900 sm:w-20">
+                <i class="fa-brands fa-linkedin-in text-4xl sm:text-5xl"></i>
+            </div>
+
+            <h3 class="text-xl font-semibold sm:text-2xl">
+                LinkedIn
+            </h3>
+
+            <p class="text-center text-sm font-extralight text-white/50 sm:text-base">
+                /luizdevpro
+            </p>
+
+        </a>
+
+        <a href="https://www.instagram.com/luiz_devpro/"
+            class="w-40 flex flex-col gap-2 text-white justify-center items-center text-center"
+            target="_blank" rel="noopener noreferrer">
+
+            <div class="flex aspect-square w-16 items-center justify-center rounded-full bg-slate-900 sm:w-20">
+                <i class="fa-brands fa-instagram text-4xl sm:text-5xl"></i>
+            </div>
+
+            <h3 class="text-xl font-semibold sm:text-2xl">
+                Instagram
+            </h3>
+
+            <p class="text-center text-sm font-extralight text-white/50 sm:text-base">
+                @luiz_devpro
+            </p>
+
+        </a>
+
+        <a href="mailto:luizdev.pro@gmail.com"
+            class="w-40 flex flex-col gap-2 text-white justify-center items-center text-center">
+
+            <div class="flex aspect-square w-16 items-center justify-center rounded-full bg-slate-900 sm:w-20">
+                <i class="fa-regular fa-envelope text-4xl sm:text-5xl"></i>
+            </div>
+
+            <h3 class="text-xl font-semibold sm:text-2xl">
+                E-mail
+            </h3>
+
+            <p class="text-center break-all text-sm font-extralight text-white/50 sm:text-base">
+                luizdev.pro@gmail.com
+            </p>
+
+        </a>
+
+    </article>
+
+</section>
 
 
     <script src="assets/js/script.js"></script>
