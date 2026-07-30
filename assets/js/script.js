@@ -29,7 +29,6 @@ closeBtn.addEventListener("click", closeMenu);
 
 overlay.addEventListener("click", closeMenu);
 
-// Fecha ao clicar em um link
 document.querySelectorAll("#mobile-menu a").forEach(link => {
     link.addEventListener("click", closeMenu);
 }); 
