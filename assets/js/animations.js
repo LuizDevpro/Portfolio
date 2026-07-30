@@ -286,3 +286,35 @@ const contactObserver = new IntersectionObserver(
 );
 
 contactObserver.observe(contactSection);
+
+// =========================
+// Voltar ao topo
+// =========================
+
+const backToTop = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        backToTop.classList.remove("opacity-0", "translate-y-20", "pointer-events-none");
+
+    } else {
+
+        backToTop.classList.add("opacity-0", "translate-y-20", "pointer-events-none");
+
+    }
+
+});
+
+backToTop.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
