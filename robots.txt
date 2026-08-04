@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oluizdev.com.br/sitemap.xml
